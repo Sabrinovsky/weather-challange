@@ -1,21 +1,20 @@
 import React, { useState } from 'react';
-import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 import './index.css';
-import BootstrapTable from 'react-bootstrap-table-next'
 
-const Week = ( props ) =>
-    <div className='div-father inline-block'>
+const Week = ({ data } ) =>
+
+<div className='inline-block' key={data.day}>
         <div className='bg-day pd-default'>
-            {props.day}
+            {data.day}
         </div>
         <div className='pd-default border-bot high'>
-            21º C
+            {data.max}º C
         </div>
         <div className='pd-default border-bot low'>
-            15º C
+            {data.min}º C
         </div>
         <div className='pd-default border-bot'>
-            18%
+            {data.umi}%
         </div>
     </div>
 
