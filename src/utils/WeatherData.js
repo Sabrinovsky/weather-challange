@@ -1,4 +1,11 @@
 
+// const dayName = new Array ("Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado")
+// const date = new Date()
+
+// weekDay = () =>{
+//     return dayName[date.getDay]
+// }
+
 const data = [  {day:'Domingo',max:'25',min:'16',umi:'15'},
                 {day:'Segunda',max:'28',min:'11',umi:'11'},
                 {day:'Terça',max:'28',min:'17',umi:'15'},

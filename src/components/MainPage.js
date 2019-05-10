@@ -1,14 +1,13 @@
 import React from 'react'
-import { Container,Row } from 'react-bootstrap' 
+import { Container } from 'react-bootstrap' 
 
 import WeatherDay from './WeatherDay' 
 import Chart from './Chart'
 import data from '../utils/WeatherData'
 
 
-const WeatherTable = () =>
-    <Container className='center-div'>
-        <Row>
+const MaintPage = () =>
+    <Container className='center-div' style={{width:'100%',height:"16em"}} >
             {
               Object.keys(data).map((key)=>{
                 return(
@@ -16,10 +15,7 @@ const WeatherTable = () =>
                 )
               })
             }
-        </Row>
-        <Row style={{display:'inline-flex'}}>
             <Chart data={data}/>
-        </Row>
     </Container>
 
-export default WeatherTable
+export default MaintPage
