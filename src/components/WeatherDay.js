@@ -1,5 +1,5 @@
 import React from 'react';
-import './index.css';
+import '../index.css';
 
 const bars = (umi) =>
     {
@@ -14,11 +14,16 @@ const bars = (umi) =>
         )
     }
 
-const Week = ({ data } ) =>
+const WeatherDay = ({ data } ) =>
 
 <div className='inline-block' key={data.day}>
         <div className='bg-day pd-default'>
             {data.day}
+            <div>
+                <span className='sub-text'>
+                    31 de fevereiro
+                </span>
+            </div>
         </div>
         <div className='pd-default border-bot high'>
             <i className="fa fa-caret-up"/>
@@ -35,4 +40,4 @@ const Week = ({ data } ) =>
     </div>
 
 
-export default Week;
+export default WeatherDay;

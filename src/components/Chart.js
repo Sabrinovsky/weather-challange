@@ -6,12 +6,11 @@ import {
   Tooltip, LabelList
 } from 'recharts';
 
-const renderCustomizedLabel = (props) => {
-  const { x, width, value } = props;
+const renderCustomizedLabel = ({x, width,value}) => {
   return (
     <g>
-      <text x={x + width / 2} y={315} fill="#fff" textAnchor="middle" dominantBaseline="middle">
-        {value+'°'}
+      <text x={x + width / 2} y={330} fill="#fff" textAnchor="middle" dominantBaseline="middle">
+        {value+'%'}
       </text>
     </g>
   );
@@ -21,7 +20,7 @@ const Chart = ({ data }) =>
 
       <div className='' >
         <ComposedChart
-          width={800}
+          width={1100}
           height={400}
           data={data}
           margin={{

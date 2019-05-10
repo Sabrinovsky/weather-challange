@@ -8,6 +8,11 @@ body {
   color: rgb(68, 68, 68);
 }
 
+.sub-text{
+  font-size: 13px;
+  color: rgb(150,150,150);
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -20,6 +25,7 @@ code {
 .bg-day{
   text-transform: uppercase;
   background: #eaeaea;
+  font-weight: bold;
 }
 .pd-default{
   padding: 20px;
@@ -40,9 +46,8 @@ code {
 .low{
   color: rgb(45, 136, 255);
 }
-.center-div
-{
-     text-align: center;
+.center-div{
+  text-align: center;
 }
 
 .fa{
