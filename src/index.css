@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: rgb(68, 68, 68);
 }
 
 code {
@@ -13,7 +14,6 @@ code {
 }
 
 .div-father{
-  
   text-align: center;
 }
 
@@ -43,4 +43,20 @@ code {
 .center-div
 {
      text-align: center;
+}
+
+.fa{
+  margin-right: 5px;
+}
+
+.umi-bar{
+  height: 13px;
+  width:  3px;
+  background-color: rgba(200, 200, 200, 0.685);
+  display: inline-block;
+  margin-right: 3px;
+  border-radius: 20%;
+}
+.active{
+  background-color: rgba(66, 164, 255, 0.685);
 }
