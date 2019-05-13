@@ -18,7 +18,7 @@ const data = [  {day:'Domingo',max:'25',min:'16',umi:'15'},
 const getData = new Promise( (resolve, reject) => {
     setTimeout(()=> {
       resolve(data);
-    }, 3000);
+    }, 2000);
   });
 
 

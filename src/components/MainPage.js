@@ -1,10 +1,10 @@
 import React, {  useEffect,useState } from 'react'
 import { Container } from 'react-bootstrap'
-import Loader from 'react-loader-spinner'
 
 import WeatherDay from './WeatherDay' 
 import Chart from './Chart'
 import getData from '../utils/WeatherData'
+import Loader from '../Loader'
 
 
 const  MainPage = () => { 
@@ -18,12 +18,7 @@ const  MainPage = () => {
   });
 
   if (!data) return(
-    <Loader 
-         type="Puff"
-         color="#00BFFF"
-         height="100"	
-         width="100"
-      />  
+      <Loader/>
   )
   return(
     <>
