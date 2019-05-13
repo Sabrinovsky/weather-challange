@@ -5,9 +5,7 @@ import WeatherTable from './components/MainPage'
 
 function App() {
   return (
-      <>
         <WeatherTable/>
-      </>    
   );  
 }
 

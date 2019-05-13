@@ -14,4 +14,12 @@ const data = [  {day:'Domingo',max:'25',min:'16',umi:'15'},
                 {day:'Sexta',max:'32',min:'19',umi:'14'},
                 {day:'Sábado',max:'28',min:'16',umi:'10'}]
 
-export default data
+
+const getData = new Promise( (resolve, reject) => {
+    setTimeout(()=> {
+      resolve(data);
+    }, 3000);
+  });
+
+
+export default getData
