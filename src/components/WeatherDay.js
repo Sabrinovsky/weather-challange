@@ -1,11 +1,11 @@
 import React from "react";
 import "../index.css";
 
-const Bars = umi => {
-  const barNumbers = Math.floor(umi / 20);
+const Bars = max_rel_humidity => {
+  const barNumbers = Math.floor(max_rel_humidity / 20);
   return (
     <>
-      <div className={"umi-bar " + (umi / 20 > 0 ? "active" : "")} />
+      <div className={"umi-bar " + (max_rel_humidity / 20 > 0 ? "active" : "")} />
       <div className={"umi-bar " + (barNumbers >= 1 ? "active" : "")} />
       <div className={"umi-bar " + (barNumbers >= 3 ? "active" : "")} />
       <div className={"umi-bar " + (barNumbers >= 4 ? "active" : "")} />
@@ -31,7 +31,7 @@ const WeatherDay = ({ data }) => (
       {data.min_temperature}º C
     </div>
     <div className="pd-default border-bot">
-      {Bars(data.umi)}
+      {Bars(data.max_rel_humidity)}
       {data.max_rel_humidity}%
     </div>
   </div>
