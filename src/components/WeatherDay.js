@@ -1,7 +1,7 @@
 import React from "react";
 import "../index.css";
 
-const Bars = (max_rel_humidity) => {
+const bars = (max_rel_humidity) => {
   const barNumbers = Math.floor(max_rel_humidity / 20);
   return (
     <>
@@ -33,7 +33,7 @@ const WeatherDay = ({ data }) => (
       {data.min_temperature}º C
     </div>
     <div className="pd-default border-bot">
-      {Bars(data.max_rel_humidity)}
+      {bars(data.max_rel_humidity)}
       {data.max_rel_humidity}%
     </div>
   </div>
