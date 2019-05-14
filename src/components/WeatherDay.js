@@ -1,11 +1,13 @@
 import React from "react";
 import "../index.css";
 
-const Bars = (max_rel_humidity) => {
+const Bars = max_rel_humidity => {
   const barNumbers = Math.floor(max_rel_humidity / 20);
   return (
     <>
-      <div className={"umi-bar " + (max_rel_humidity / 20 > 0 ? "active" : "")} />
+      <div
+        className={"umi-bar " + (max_rel_humidity / 20 > 0 ? "active" : "")}
+      />
       <div className={"umi-bar " + (barNumbers >= 1 ? "active" : "")} />
       <div className={"umi-bar " + (barNumbers >= 3 ? "active" : "")} />
       <div className={"umi-bar " + (barNumbers >= 4 ? "active" : "")} />
