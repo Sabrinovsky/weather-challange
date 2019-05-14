@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.css';
 
-import WeatherTable from './components/MainPage'
+
+import MainPage from './components/MainPage'
+
 
 function App() {
   return (
-        <WeatherTable/>
+        <MainPage/>
   );  
 }
 

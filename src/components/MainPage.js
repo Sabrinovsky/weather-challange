@@ -1,39 +1,42 @@
-import React, {  useEffect,useState } from 'react'
-import { Container } from 'react-bootstrap'
+import React, { useEffect, useState } from "react";
+import { Container, Row, Col } from "react-bootstrap";
 
-import WeatherDay from './WeatherDay' 
-import Chart from './Chart'
-import getData from '../utils/WeatherData'
-import Loader from '../Loader'
+import WeatherDay from "./WeatherDay";
+import Chart from "./Chart";
+import getData from "../utils/WeatherData";
+import Loader from "../Loader";
 
-
-const  MainPage = () => { 
-  
-  const [data, setData] = useState(null);
+const MainPage = () => {
+  const [data, setData] = useState(new Array());
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getData.then(res=>{
-      setData(res)
-    })
+    getData.then(res => {
+      setData(res);
+      setLoading(false);
+    });
   });
 
-  if (!data) return(
-      <Loader/>
-  )
-  return(
+  if (loading) return <Loader />;
+  if (data.length === 0) return "Nenhum dado encontrado";
+  return (
     <>
-      <Container className='center-div' style={{width:'100%',height:"16em"}} >
-              {
-                Object.keys(data).map((key)=>{
-                  return(
-                    <WeatherDay data={data[key]} />
-                  )
-                })
-              }
-              <Chart data={data}/>
+      <Container className="">
+        <Row>
+          <Col className="responsive-flex">
+            {Object.keys(data).map(key => {
+              return <WeatherDay key={key} data={data[key]} />;
+            })}
+          </Col>
+        </Row>
+        <Row>
+          <Col className="chart">
+            <Chart data={data} />
+          </Col>
+        </Row>
       </Container>
     </>
-  )
-}
-    
-export default MainPage
+  );
+};
+
+export default MainPage;

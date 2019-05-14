@@ -1,25 +1,59 @@
+const data = [
+  {
+    day: "Domingo",
+    max_temperature: "25",
+    min_temperature: "16",
+    max_rel_humidity: "15",
+    monthDay: "01/02/2013"
+  },
+  {
+    day: "Segunda",
+    max_temperature: "28",
+    min_temperature: "11",
+    max_rel_humidity: "11",
+    monthDay: "01/02/2013"
+  },
+  {
+    day: "Terça",
+    max_temperature: "28",
+    min_temperature: "17",
+    max_rel_humidity: "15",
+    monthDay: "01/02/2013"
+  },
+  {
+    day: "Quarta",
+    max_temperature: "30",
+    min_temperature: "20",
+    max_rel_humidity: "12",
+    monthDay: "01/02/2013"
+  },
+  {
+    day: "Quinta",
+    max_temperature: "25",
+    min_temperature: "11",
+    max_rel_humidity: "11",
+    monthDay: "01/02/2013"
+  },
+  {
+    day: "Sexta",
+    max_temperature: "32",
+    min_temperature: "19",
+    max_rel_humidity: "14",
+    monthDay: "01/02/2013"
+  },
+  {
+    day: "Sábado",
+    max_temperature: "28",
+    min_temperature: "16",
+    max_rel_humidity: "10",
+    monthDay: "01/02/2013"
+  }
+];
 
-// const dayName = new Array ("Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado")
-// const date = new Date()
+const getData = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve(data);
+  }, 2000);
+});
 
-// weekDay = () =>{
-//     return dayName[date.getDay]
-// }
-
-const data = [  {day:'Domingo',max:'25',min:'16',umi:'15'},
-                {day:'Segunda',max:'28',min:'11',umi:'11'},
-                {day:'Terça',max:'28',min:'17',umi:'15'},
-                {day:'Quarta',max:'30',min:'20',umi:'12'},
-                {day:'Quinta',max:'25',min:'11',umi:'11'},
-                {day:'Sexta',max:'32',min:'19',umi:'14'},
-                {day:'Sábado',max:'28',min:'16',umi:'10'}]
-
-
-const getData = new Promise( (resolve, reject) => {
-    setTimeout(()=> {
-      resolve(data);
-    }, 2000);
-  });
-
-
-export default getData
+export default getData;
