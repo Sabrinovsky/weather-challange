@@ -1,7 +1,7 @@
 import React from "react";
 import "../index.css";
 
-const Bars = max_rel_humidity => {
+const Bars = (max_rel_humidity) => {
   const barNumbers = Math.floor(max_rel_humidity / 20);
   return (
     <>
