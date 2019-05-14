@@ -24,8 +24,8 @@ const MainPage = () => {
       <Container className="">
         <Row>
           <Col className="responsive-flex">
-            {Object.keys(data).map(key => {
-              return <WeatherDay key={key} data={data[key]} />;
+            {data.map((data, key) => {
+              return <WeatherDay key={key} data={data} />;
             })}
           </Col>
         </Row>
