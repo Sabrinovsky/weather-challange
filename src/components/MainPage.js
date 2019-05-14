@@ -11,7 +11,7 @@ const MainPage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getData.then(res => {
+    getData.then((res) => {
       setData(res);
       setLoading(false);
     });
