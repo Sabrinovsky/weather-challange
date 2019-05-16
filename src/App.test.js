@@ -1,9 +1,19 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App";
+import { shallow } from 'enzyme'
+import MainPage from './components/MainPage'
+import getData from "./utils/WeatherData";
+import WeatherDay from "./components/WeatherDay";
+const data = [
+  {
+    day: "Domingo",
+    max_temperature: "25",
+    min_temperature: "16",
+    max_rel_humidity: "15",
+    monthDay: "01/02/2013"
+  }]
 
 it("renders without crashing", () => {
-  const div = document.createElement("div");
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+  
+    const page = shallow(<WeatherDay key={0} data={data[0]} />)
+    console.log(page.find('').length)
 });
