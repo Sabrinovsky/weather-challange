@@ -45,9 +45,8 @@ const MainPage = () => {
   }
 
   useEffect(() => {
-    console.log(!cordinate.longitude)
     if (cordinate.longitude || cordinate.longitude) {
-      getData.then(res => {
+      getData.then((res) => {
         setLoading(false);
         setData(res);
       });

@@ -13,5 +13,4 @@ const data = [
 
 it("renders without crashing", () => {
   const page = shallow(<WeatherDay key={0} data={data[0]} />);
-  console.log(page.find("").length);
 });
