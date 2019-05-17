@@ -16,13 +16,6 @@ const HomePage = () => {
   });
   const [error, setError] = useState(null);
 
-  if (!cordinate.longitude) {
-    navigator.geolocation.getCurrentPosition(
-      handlePositionSuccess,
-      handleError
-    );
-  }
-
   function handlePositionSuccess(position) {
     setCordinate({
       longitude: position.coords.latitude,
@@ -42,7 +35,14 @@ const HomePage = () => {
         break;
     }
   }
-
+  
+  if (!cordinate.longitude) {
+      navigator.geolocation.getCurrentPosition(
+      handlePositionSuccess,
+      handleError
+    );
+  }
+  
   useEffect(() => {
     if (cordinate.longitude || cordinate.longitude) {
       getData
