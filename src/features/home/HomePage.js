@@ -3,12 +3,11 @@ import { Container, Row, Col } from "react-bootstrap";
 
 import WeatherDay from "./WeatherDay";
 import Chart from "./Chart";
-import getData from "../utils/WeatherData";
-import Loader from "../Loader";
-import Error from "./Error";
+import getData from "../../utils/WeatherData";
+import Loader from "../../components/Loader";
+import Error from "../../components/Error";
 
-const MainPage = () => {
-
+const HomePage = () => {
   const [data, setData] = useState(new Array());
   const [loading, setLoading] = useState(true);
   const [cordinate, setCordinate] = useState({
@@ -18,7 +17,7 @@ const MainPage = () => {
   const [error, setError] = useState(null);
 
   if (!cordinate.longitude) {
-      navigator.geolocation.getCurrentPosition(
+    navigator.geolocation.getCurrentPosition(
       handlePositionSuccess,
       handleError
     );
@@ -46,10 +45,14 @@ const MainPage = () => {
 
   useEffect(() => {
     if (cordinate.longitude || cordinate.longitude) {
-      getData.then((res) => {
-        setLoading(false);
-        setData(res);
-      });
+      getData
+        .then(res => {
+          setLoading(false);
+          setData(res);
+        })
+        .catch(error => {
+          setError({ message: error });
+        });
     }
   }, [cordinate]);
 
@@ -75,4 +78,4 @@ const MainPage = () => {
   );
 };
 
-export default MainPage;
+export default HomePage;
